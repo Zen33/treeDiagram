@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<title>Snapshot | Demo</title>
+<meta charset='utf-8'>
+<style>
+.node {
+cursor: pointer;
+}
+.link-root {
+fill: none;
+stroke: #466ea0;
+stroke-width: 2px;
+}
+.link-replica {
+fill: none;
+stroke: #ccc;
+stroke-width: 2px;
+}
+#arrowroot {
+fill: #466ea0;
+}
+#arrowreplica {
+fill: #ccc;
+}
+.node-menu ul {
+background: #fff;
+border: 1px solid #000;
+margin: 0;
+padding: 0;
+}
+.node-menu li {
+cursor: pointer;
+list-style: none;
+margin: 0;
+padding: 5px;
+}
+.node-menu li:hover {
+background: #d5d5d5;
+}
+.snapshot-form {
+position: absolute;
+margin: 20px 0 0 10px;
+}
+#container {
+width: 1024px;
+height: 768px;
+border: 1px solid #466ea0;
+margin-top: 10px;
+}
+svg {
+overflow: hidden;
+}
+</style>
+<body>
+<div class="snapshot-action">
+<h3>Snapshot Tree Diagram Demo</h3>
+<button rel="create">生成快照...</button>
+<button rel="restore" disabled>还原到...</button>
+<!--<button rel="action" disabled>操作</button>-->
+<button rel="remove" disabled>删除</button>
+<!--<button rel="check" disabled>查看</button>-->
+<button rel="clear">清空记录</button>
+<button rel="zoom">初始比例</button>
+<div class="snapshot-form" style="display:none;">
+<label>名称：</label><input type="text" id="snapshotName" />
+<input class="createSnapshot" type="button" value="生成快照" />
+<input class="restoreSnapshot" type="button" value="还原快照" />
+</div>
+</div>
+<div id="container"></div>
+<script src='js/d3.v3.min.js'></script>
+<script src='js/jquery-1.8.0.min.js'></script>
+<script src="js/cycle.min.js"></script>
+<script src="js/treeDiagram.min.js"></script>
+</body>
